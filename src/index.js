@@ -1,9 +1,10 @@
 const { Client } = require('whatsapp-web.js')
 const qrcode = require('qrcode-terminal')
+const path = require("path");
 const Version = require('./versiculo.js')
 const SESSION_FILE_PATH = '../session.json';
 
-let sessionData = require(SESSION_FILE_PATH);
+let sessionData = require(path.resolve(__dirname, SESSION_FILE_PATH));
 
 const client = new Client({ session: sessionData });
 
