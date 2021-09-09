@@ -1,11 +1,21 @@
 # bible-reader
 
-This project create a whasapp robot. This robot read the holy bible.
+This project creates a WhatsApp Robot that reads the Holy Bible.
 
-Example: send mensage "1 reis 1 2" -> format of mensage is "book of bible chapter version"
+## Instalation 
 
-npm install -> for install de project and his packages
+```npm install```
 
-npm run authenticate -> create a qrcode for authenticate user and save session in file sesson.json for use in authentication later.
+### Creating a QR code for authenticate the user
 
-npm start -> active robot (comand "npm run authenticate" is required before)
+This process save the session in file sesson.json for use in authentication later.
+
+```npm run authenticate```
+
+### Activating the Robot
+```npm start```
+
+## Communication example
+
+  Sending the message "1 reis 1 2", returns "book of bible chapter version"
+
