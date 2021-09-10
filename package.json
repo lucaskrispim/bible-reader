@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./src/tests",
     "start": "node ./src/index.js",
     "authenticate": "node ./src/conect_save.js"
   },
@@ -15,5 +15,8 @@
     "fs": "0.0.1-security",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.14.1"
+  },
+  "devDependencies": {
+    "jest": "^27.1.1"
   }
 }
