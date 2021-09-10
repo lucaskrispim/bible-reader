@@ -20,4 +20,24 @@ describe("Bible tests", () => {
         const ver = new Bible('Isaías 55 9');
         expect(ver.getVersion()).toEqual('Porque assim como os céus são mais altos do que a terra, assim são os meus caminhos mais altos do que os vossos caminhos, e os meus pensamentos mais altos do que os vossos pensamentos.');
     })
+
+    it('should get null should get "Isaías 55 9" when exists more than one space between words', async () => {
+        const ver = new Bible('Isaías 55 9');
+        expect(ver.getVersion()).toEqual('Porque assim como os céus são mais altos do que a terra, assim são os meus caminhos mais altos do que os vossos caminhos, e os meus pensamentos mais altos do que os vossos pensamentos.');
+    })
+
+    it('should get null when not exists a book', async () => {
+        const ver = new Bible('1 Isaías 55 9');
+        expect(ver.getVersion()).toEqual(null);
+    })
+
+    it('should get null when mensage is empty', async () => {
+        const ver = new Bible(' ');
+        expect(ver.getVersion()).toEqual(null);
+    })
+
+    it('should get null when mensage is null', async () => {
+        const ver = new Bible(null);
+        expect(ver.getVersion()).toEqual(null);
+    })
 });
