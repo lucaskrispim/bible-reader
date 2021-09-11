@@ -1,8 +1,9 @@
 const { Client } = require('whatsapp-web.js')
+const path = require("path");
 const SESSION_FILE_PATH = '../session.json';
 const Bible = require('../biblia_acf')
 
-let sessionData = require(SESSION_FILE_PATH);
+let sessionData = require(path.resolve(__dirname, SESSION_FILE_PATH));
 
 const client = new Client({ session: sessionData });
 
