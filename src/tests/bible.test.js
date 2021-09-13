@@ -40,4 +40,9 @@ describe("Bible tests", () => {
         const ver = new Bible(null);
         expect(ver.getVersion()).toEqual(null);
     })
+
+    it('should get 1 Reis', async () => {
+        const ver = new Bible('1 Reis 1 1');
+        expect(ver.getBook()).toEqual('1 reis');
+    })
 });
