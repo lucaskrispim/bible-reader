@@ -1,7 +1,7 @@
 const { Client } = require('whatsapp-web.js')
 const path = require("path");
+const Version = require('./versiculo.js')
 const SESSION_FILE_PATH = '../session.json';
-const Bible = require('../biblia_acf')
 
 let sessionData = require(path.resolve(__dirname, SESSION_FILE_PATH));
 
@@ -12,9 +12,11 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  message.reply(
-    Bible.find(message.body.toLowerCase())
-  )
+  const ver = new Version(message.body)
+  if (ver.getVersion()) {
+    message.reply(ver.getVersion());
+  }
+
 });
 
 client.initialize();
